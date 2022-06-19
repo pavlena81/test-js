@@ -59,3 +59,45 @@ console.log(15 + 3 + "number"); // 18number;
 // !+[]+[]+![]
 // new Date(0) - 0
 // new Date(0) + 0
+
+// const clients = ["Mango", "Ajax", "Poly"];
+
+// for (let i = 0; i < clients.length; i += 1) {
+//   console.log(clients[i]);
+// }
+
+const fruit = "apples";
+console.log(fruit.split("")); // ['a', 'p', 'p', 'l', 'e', 's']
+
+const frase = ["it`s", "a", "nice", "day"];
+console.log(frase.join("-")); // it`s, a, nice, day
+console.log(frase.join(" "));
+
+const words = ["JavaScript", "это", "интересно"];
+console.log(words.join("")); // "JavaScriptэтоинтересно"
+console.log(words.join(" ")); // "JavaScript это интересно"
+console.log(words.join("-")); // "JavaScript-это-интересно"
+// ////////////////////////
+function calculateTotalPrice(order) {
+  let total = 0;
+  // Change code below this line
+ for (let i = 0; i < order.length; i += 1){
+   total += order[i];
+ }
+  // Change code above this line
+  return total;
+}
+
+// ///////////////////////
+function findLongestWord(string) {
+  // Change code below this line
+  const stringSplit = string.split(' ');
+  let longestWord = " ";
+  for (const word of stringSplit) {
+    if (word.length > longestWord.length) {
+    longestWord = word;
+}
+}
+  return longestWord; 
+  // Change code above this line
+}
