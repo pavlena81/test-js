@@ -46,6 +46,8 @@ console.log("number" + 15 + 3);// number153;
 // 15 + 3 + "number"
 console.log(15 + 3 + "number"); // 18number;
 // [1] > null
+console.log([1] > null);//true;
+
 // "foo" + + "bar"
 // 'true' == true
 // false == 'false'
@@ -90,7 +92,7 @@ function calculateTotalPrice(order) {
 
 // ///////////////////////
 function findLongestWord(string) {
-  // Change code below this line
+  
   const stringSplit = string.split(' ');
   let longestWord = " ";
   for (const word of stringSplit) {
@@ -99,5 +101,48 @@ function findLongestWord(string) {
 }
 }
   return longestWord; 
-  // Change code above this line
+  
 }
+// ///////////////////////
+
+function filterArray(numbers, value) {
+  
+  const filteredNumbers = [];
+
+  for (let i = 0; i < numbers.length; i += 1) {
+    const number = numbers[i];
+
+    if (number > value) {
+      filteredNumbers.push(number);
+    }
+  }
+
+  return filteredNumbers;
+  
+}
+//   or
+// function filterArray(numbers, value) {
+  
+//   const filteredNumbers = [];
+
+//   for (const number of numbers) {   
+
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   }
+//   return filteredNumbers;  
+// }
+
+// ///////////////////////
+function getEvenNumbers(start, end) {
+   
+  let numbers = [];
+  for (i = start; i<= end; i +=1){
+    if(i % 2 === 0){
+       numbers.push(i);
+    }
+  }
+  return numbers;   
+}
+  // ///////////////////////
