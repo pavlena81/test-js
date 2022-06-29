@@ -146,3 +146,110 @@ function getEvenNumbers(start, end) {
   return numbers;   
 }
   // ///////////////////////
+//   function multiply(...args) {
+//   console.log(args); // массив всех аргументов
+// }
+
+// multiply(1, 2);
+// multiply(1, 2, 3);
+// multiply(1, 2, 3, 4);
+
+// /////////////////////////////////
+function multiply(firstNumber, secondNumber, ...otherArgs) {
+  console.log(firstNumber); // Значение первого аргумента
+  console.log(secondNumber); // Значение второго аргумента
+  console.log(otherArgs); // Массив остальных аргументов
+}
+
+multiply(1, 2);
+multiply(1, 2, 3);
+multiply(1, 2, 3, 4);
+
+// /////////////////////////
+const firstBook = {
+  title: "The Last Kingdom",
+  coverImage:
+    "https://images-na.ssl-images-amazon.com/images/I/51b5YG6Y1rL.jpg",
+};
+
+const {
+  title: firstTitle,
+  coverImage: firstCoverImage = "https://via.placeholder.com/640/480",
+} = firstBook;
+
+console.log(firstTitle); // The Last Kingdom
+console.log(firstCoverImage); // https://images-na.ssl-images-amazon.com/images/I/51b5YG6Y1rL.jpg
+
+const secondBook = {
+  title: "Сон смешного человека",
+};
+
+const {
+  title: secondTitle,
+  coverImage: secondCoverImage = "https://via.placeholder.com/640/480",
+} = secondBook;
+
+console.log(secondTitle); // Сон смешного человека
+console.log(secondCoverImage); // https://via.placeholder.com/640/480
+// ////////////////////////////////
+// const a = {};
+ // const b = {};
+ // const c ={ // d:1,
+ // e:4 // };
+ // c[a] = 3;
+// c[b] = 4; //
+// console.log(c);
+//////////////////////////
+// const result1 = 'hello' ?? 'world'; // console.log(result1); // const result2 = 0 ?? 5; // console.log(result2); // const result3 = '' ?? 'javascript'; // console.log(result3); // const result4 = false ?? true; // console.log(result4); // const result5 = null ?? 'not null'; // console.log(result5); // const result6 = undefined ?? 'defined'; // console.log(result6); // let message = null; // const hello = 'Hi JavaScript'; // const result7 = message ?? hello; // console.log(result7);
+ // const result6 = null ?? NaN;
+ // console.log(result6);
+// ////////////////////////////////////////////////////////
+const atTheOldToad = {
+  potions: [
+    { name: "Speed potion", price: 460 },
+    { name: "Dragon breath", price: 780 },
+    { name: "Stone skin", price: 520 },
+  ],
+  // Change code below this line
+  getPotions() {
+    return this.potions;
+  },
+  addPotion(newPotion) {
+    for (const item of this.potions) {
+      if (item.name === newPotion.name) {
+        return `Error! Potion ${item.name} is already in your inventory!`;
+      }
+    }
+
+    this.potions.push(newPotion);
+  },
+  removePotion(potionName) {
+    // const { potions } = this;
+    // for (let i = 0; i < potions.length; i += 1) {
+    //   const { name } = potions[i];
+    //   if (potionName === name) {
+    //     potions.splice(i, 1);
+    //   }
+    // }
+
+
+    const {potions} = this;
+    for (let i = 0; i < potions.length; i += 1) {
+
+      if (potionName === potions[i].name) {
+
+        potions.splice(i, 1)
+      }
+    }
+  },
+  updatePotionName(oldName, newName) {
+    for (let i = 0; i < this.potions.length; i += 1){
+      if (oldName === this.potions[i].name){
+     this.potions[i].name = newName;
+     return}
+    }
+      return `Potion ${oldName} is not in inventory!`;
+   
+  },
+  // Change code above this line
+};
