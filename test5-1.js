@@ -97,31 +97,103 @@
 //     - начальный массив товаров,
 //     который записывается на создаваемый объект в свойство items.
 
-class Storage {
-    constructor(items){
-        this.items = items;
-    }
+// class Storage {
+//     constructor(items){
+//         this.items = items;
+//     }
 
-    getItems(){
-        return this.items;
-    }
+//     getItems(){
+//         return this.items;
+//     }
 
-    addItem(newItem){
-        this.items.push(newItem);
+//     addItem(newItem){
+//         this.items.push(newItem);
         
-    }
+//     }
 
-    removeItem(itemToRemove){
-         this.items = this.items.filter(item => item !== itemToRemove);
+//     removeItem(itemToRemove){
+//          this.items = this.items.filter(item => item !== itemToRemove);
         
-    }
-}
+//     }
+// }
 
-// Change code above 
-const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-storage.addItem("Droid");
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-storage.removeItem("Prolonger");
-console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+// // Change code above 
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem("Prolonger");
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+// ========================#11=======================================
+// class StringBuilder{
+    
+//     constructor(value){
+//         this.value = value;
+//     }
+//     getValue(){
+//         return this.value;
+//     }
+
+//     padEnd(str){
+//       this.value +=  str;
+//     }
+//     padStart(str){
+//      this.value = str + this.value;
+//     }
+
+//     padBoth(str){
+//      this.value = str + this.value + str;
+//     }
+
+// }
+
+// // Change code above 
+// const builder = new StringBuilder(".");
+// console.log(builder.getValue()); // "."
+// builder.padStart("^");
+// console.log(builder.getValue()); // "^."
+// builder.padEnd("^");
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth("=");
+// console.log(builder.getValue()); // "=^.^="
+// ========================================#14==============================
+  
+// Выполни рефакторинг класса StringBuilder,
+//     сделав свойство value приватным.
+
+//   class StringBuilder {
+//    // Change code below
+//       #value;
+//    constructor(initialValue) {
+//      this.#value = initialValue;
+//    }
+
+//    getValue() {
+//     return this.#value;
+//    }
+
+//   padEnd(str) {
+//      this.#value += str;
+//    }
+
+//    padStart(str) {
+//     this.#value = str + this.#value;
+//   }
+
+//   padBoth(str) {
+//          this.padStart(str);
+//      this.padEnd(str);
+//    }
+//  }
+
+// // // Change code 
+//  const builder = new StringBuilder(".");
+// console.log(builder.getValue()); // "."
+// builder.padStart("^");
+// console.log(builder.getValue()); // "^."
+// builder.padEnd("^");
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth("=");
+// console.log(builder.getValue()); // "=^.^="
 
