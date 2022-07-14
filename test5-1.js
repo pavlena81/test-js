@@ -265,52 +265,87 @@
 // console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
 // console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
 // =======================#20=====================================
-class User {
-  email;
+// class User {
+//   email;
 
-  constructor(email) {
-    this.email = email;
-  }
+//   constructor(email) {
+//     this.email = email;
+//   }
 
-  get email() {
-    return this.email;
-  }
+//   get email() {
+//     return this.email;
+//   }
 
-  set email(newEmail) {
-    this.email = newEmail;
-  }
-}
-class Admin extends User {
-  // Change code
-  blacklistedEmails =[];
-  static AccessLevel = {
-    BASIC: "basic",
-    SUPERUSER: "superuser",
-  };
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// class Admin extends User {
+//   // Change code
+//   blacklistedEmails =[];
+//   static AccessLevel = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
 
-  constructor({ email, accessLevel }) {
-    super(email);
-    this.accessLevel = accessLevel;
-  }
-    blacklist(email) {
-      return this.blacklistedEmails.push(email);
-    }
-    isBlacklisted(email) {
-      return this.blacklistedEmails.includes(email);
-    }
+//   constructor({ email, accessLevel }) {
+//     super(email);
+//     this.accessLevel = accessLevel;
+//   }
+//     blacklist(email) {
+//       return this.blacklistedEmails.push(email);
+//     }
+//     isBlacklisted(email) {
+//       return this.blacklistedEmails.includes(email);
+//     }
 
-  // Change code 
-}
+//   // Change code 
+// }
 
-const mango = new Admin({
-  email: "mango@mail.com",
-  accessLevel: Admin.AccessLevel.SUPERUSER,
-});
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   accessLevel: Admin.AccessLevel.SUPERUSER,
+// });
 
-console.log(mango.email); // "mango@mail.com"
-console.log(mango.accessLevel); // "superuser"
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.accessLevel); // "superuser"
 
-mango.blacklist("poly@mail.com");
-console.log(mango.blacklistedEmails); // ["poly@mail.com"]
-console.log(mango.isBlacklisted("mango@mail.com")); // false
-console.log(mango.isBlacklisted("poly@mail.com")); // true
+// mango.blacklist("poly@mail.com");
+// console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+// console.log(mango.isBlacklisted("mango@mail.com")); // false
+// console.log(mango.isBlacklisted("poly@mail.com")); // true
+// ===============================================================
+// кратность 3 и 5
+// Если мы перечислим все натуральные числа до 10, кратные 3 или 5,
+// мы получим 3, 5, 6 и 9. Сумма этих кратных равна 23.
+
+// Завершите решение так, чтобы оно возвращало сумму всех чисел,
+//  кратных 3 или 5 , меньше переданного числа. Кроме того,
+//   если число отрицательное,
+// верните 0 (для языков, в которых они есть).
+
+// let total = 0;
+
+// function solution(number){
+  
+   
+//   for(let i=0; i < number; i+=1){
+//     if(i % 3 === 0 || i % 5 === 0){
+//        total +=i;
+//     }   
+//   }
+//     return total;
+//   }
+// console.log(total);
+// Map + Reduce======================================
+// function solution(number) {
+//     return number < 3 ? 0 : Array.from({ length: number },
+//         (_, i) => i++).map(i => i % 3 === 0 || i % 5 === 0 ? i : 0)
+//         .reduce((acc, cur) => acc + cur, 0)
+// }
+//  Filter + Reduce=========================================
+// function solution(number) {
+//     return number < 3 ? 0 : [...Array(number).keys()]
+//         .filter(i => i % 3 === 0 || i % 5 === 0)
+//         .reduce((acc, sum) => acc + sum, 0)
+// }
