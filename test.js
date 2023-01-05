@@ -253,3 +253,21 @@ const atTheOldToad = {
   },
   // Change code above this line
 };
+
+// let audi = { wheels: 4 };
+// let tesla = audi;
+// delete audi.wheels;
+// console.log(audi.wheels, tesla.wheels);
+// //undefined undefined
+
+(function (i) {
+  console.log(i);
+})(25)
+console.log(window.i)
+///////////////////////
+const findLogin = function (allLogins, loginsToFind) {
+  const message = allLogins.includes(loginsToFind)
+    ? `user ${loginToFind} find`
+    : `user ${loginToFind} don't find`;
+  return message
+}
