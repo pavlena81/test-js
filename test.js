@@ -271,3 +271,13 @@ const findLogin = function (allLogins, loginsToFind) {
     : `user ${loginToFind} don't find`;
   return message
 }
+/////////////////
+const polindrome = str => {
+  //turn the string to lowercase
+  str = srt.toLowerCase()
+  //reverse input string and return the result
+
+  return str === str.split('').reverse().join()
+}
+
+
