@@ -260,10 +260,10 @@ const atTheOldToad = {
 // console.log(audi.wheels, tesla.wheels);
 // //undefined undefined
 
-(function (i) {
-  console.log(i);
-})(25)
-console.log(window.i)
+// (function (i) {
+//   console.log(i);
+// })(25)
+// console.log(window.i)
 ///////////////////////
 const findLogin = function (allLogins, loginsToFind) {
   const message = allLogins.includes(loginsToFind)
@@ -272,12 +272,22 @@ const findLogin = function (allLogins, loginsToFind) {
   return message
 }
 /////////////////
-const polindrome = str => {
-  //turn the string to lowercase
-  str = srt.toLowerCase()
-  //reverse input string and return the result
+// const polindrome = (str) => {
+//   //turn the string to lowercase
+//   str = str.toLowerCase()
+//   //reverse input string and return the result
 
-  return str === str.split('').reverse().join()
+//   return str === str.split('').reverse().join()
+// }
+
+///////////////////
+const findVowels = str => {
+  let count = 0
+  const vowels = ['a', 'o', 'i', 'e', 'u']
+  for (let char of str.toLowerCase()) {
+    if (vowels.includes(char)) {
+      count++
+    }
+  }
+  return count
 }
-
-
